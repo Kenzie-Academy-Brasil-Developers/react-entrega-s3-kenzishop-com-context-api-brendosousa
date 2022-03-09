@@ -1,9 +1,12 @@
 import Routes from "./routes";
+import { ProductsProvider } from "./providers/products";
 
 function App() {
   return (
     <>
-      <Routes />
+      <ProductsProvider>
+        <Routes />
+      </ProductsProvider>
     </>
   );
 }
