@@ -1,4 +1,4 @@
-const db = [
+const books = [
   {
     name: "Dom Casmurro",
     author: "Machado de Assis",
@@ -40,4 +40,4 @@ const db = [
   },
 ];
 
-export default db;
+export default books;
