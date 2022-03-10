@@ -1,13 +1,13 @@
 import { useCart } from "../../providers/Cart";
-import { Container } from "./styles";
+import { Container, Box } from "./styles";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 
 const ProductCard = ({ product }) => {
-  const { cart, addToCart } = useCart();
+  const { newCart, addToCart } = useCart();
 
   const handleAddToCart = () => {
-    if (cart.includes(product)) {
+    if (newCart.includes(product)) {
       toast.error("Ops, só é possível adicionar um exemplar de cada");
     } else {
       addToCart(product);
@@ -17,12 +17,12 @@ const ProductCard = ({ product }) => {
   return (
     <Container>
       <img src={product.image} alt={product.name} />
-      <div>
+      <Box>
         <h1>{product.name}</h1>
         <p>{product.author}</p>
-        <span>R$ {product.price.toFixed(2)}</span>
+        <span>R$ {product.price.toFixed(2).replace(".", ",")}</span>
         <button onClick={handleAddToCart}>Adicionar ao carrinho</button>
-      </div>
+      </Box>
       <ToastContainer />
     </Container>
   );

@@ -2,8 +2,8 @@ import styled from "styled-components";
 import IconButton from "@mui/material/IconButton";
 
 export const StyledHeader = styled.header`
+  background-color: #20b5d8;
   height: 150px;
-  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,9 +13,15 @@ export const StyledHeader = styled.header`
   h1 {
     color: #1976d2;
     margin-top: 20px;
+    padding: 15px;
+    cursor: pointer;
+    &:hover {
+      border: 1px solid white;
+      border-radius: 10px;
+    }
   }
   span {
-    color: #ff5ea0;
+    color: white;
   }
   @media (min-width: 900px) {
     flex-direction: row;
@@ -42,11 +48,13 @@ export const Button = styled(IconButton)`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
     background-color: #ff5ea0;
     border-radius: 100%;
     margin-left: -10px;
     margin-top: -20px;
+    &:hover {
+      border: 1px solid white;
+    }
   }
   h2 {
     font-size: 20px;

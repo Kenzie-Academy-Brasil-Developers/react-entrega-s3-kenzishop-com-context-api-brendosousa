@@ -2,30 +2,41 @@ import { useCart } from "../../providers/Cart";
 import CartCard from "../../components/CartCard";
 import Header from "../../components/Header";
 
+import { MainContent, Container, Resume, InfoHeader, Title } from "./styles";
+
 const CartPage = () => {
-  const { cart } = useCart();
+  const { newCart } = useCart();
+
+  const totalPrice = newCart.reduce((acum, actual) => {
+    return actual.price + acum;
+  }, 0);
 
   return (
     <div>
       <Header />
-      {cart.length > 0 ? (
-        <div>
-          <div>
-            {cart.map((product, index) => (
+      {newCart.length > 0 ? (
+        <MainContent>
+          <Container>
+            <InfoHeader>
+              <span>Produto</span>
+              <span>Preço</span>
+            </InfoHeader>
+
+            {newCart.map((product, index) => (
               <CartCard product={product} key={index} />
             ))}
-          </div>
-          <div>
+          </Container>
+          <Resume>
             <h1>Resumo do pedido</h1>
             <div>
-              <span>{cart.length} produtos</span>
-              <span>R$</span>
+              <span>{newCart.length} produtos</span>
+              <span>R$ {totalPrice.toFixed(2).replace(".", ",")}</span>
             </div>
             <button>Finalizar pedido</button>
-          </div>
-        </div>
+          </Resume>
+        </MainContent>
       ) : (
-        <h1>Adicione produtos ao carrinho para vê-los aqui</h1>
+        <Title>Adicione produtos ao carrinho para vê-los aqui</Title>
       )}
     </div>
   );

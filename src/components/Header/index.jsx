@@ -10,11 +10,15 @@ const Header = () => {
     return history.push("/cart");
   };
 
-  const { cart } = useCart();
+  const handleBackToMain = () => {
+    return history.push("/");
+  };
+
+  const { newCart } = useCart();
 
   return (
     <StyledHeader>
-      <h1>
+      <h1 title="Voltar à página inicial" onClick={handleBackToMain}>
         <span>Kenzie</span>Shop
       </h1>
       <Box>
@@ -24,7 +28,7 @@ const Header = () => {
           onClick={handleCartPage}
         >
           <AddShoppingCartIcon />
-          {cart.length > 0 && <div>{cart.length}</div>}
+          {newCart.length > 0 && <div>{newCart.length}</div>}
           <h2>Carrinho</h2>
         </Button>
       </Box>

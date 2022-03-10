@@ -18,7 +18,7 @@ const books = [
     author: "Aghata Christie",
     price: 39.99,
     image:
-      "https://http2.mlstatic.com/D_NQ_NP_855423-MLB41572489335_042020-O.jpg",
+      "https://http2.mlstatic.com/D_NQ_NP_769025-MLB26988661658_032018-O.jpg",
   },
   {
     name: "A Revolução dos Bichos",
