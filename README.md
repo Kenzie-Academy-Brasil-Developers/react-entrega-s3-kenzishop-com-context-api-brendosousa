@@ -6,7 +6,7 @@
 
 ## Link da aplicação
 
-<a href="https://react-entrega-s3-kenzishop-com-context-api-brendosousa.vercel.app/">KenzieHub</a>
+<a href="https://react-entrega-s3-kenzishop-com-context-api-brendosousa.vercel.app/">KenzieShop</a>
 
 ## Tecnologias
 
